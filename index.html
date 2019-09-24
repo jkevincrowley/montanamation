@@ -43,7 +43,6 @@
   <div class='map-overlay'>
     <h2 id='location-title'></h2>
     <p id='location-description'></p>
-    <small>Text credit: <a target='_blank' href='http://www.nycgo.com/neighborhoods'>nycgo.com</a></small>
   </div>
 </div>
 
@@ -59,7 +58,6 @@ var map = new mapboxgl.Map({
 });
 
 var title = document.getElementById('location-title');
-var description = document.getElementById('location-description');
 
 var locations = [{
     "id": "1",
@@ -96,7 +94,6 @@ var locations = [{
 }, {
     "id": "5",
     "title": "Bozeman",
-    "description": "Take a free ferry ride to an island getaway filled with historic architecture, stunning views, gardens and many family-friendly attractions.",
     "camera": {
         center: [-111.073, 45.720],
         bearing: 96.8,
@@ -107,9 +104,6 @@ var locations = [{
 
 function playback(index) {
     title.textContent = locations[index].title;
-    description.textContent = locations[index].description;
-
-    highlightBorough(locations[index].id ? locations[index].id : '');
 
     // Animate the map position based on camera properties
     map.flyTo(locations[index].camera);
@@ -126,7 +120,6 @@ function playback(index) {
 
 // Display the last title/description first
 title.textContent = locations[locations.length - 1].title;
-description.textContent = locations[locations.length - 1].description;
 
 </script>
 
