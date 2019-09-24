@@ -120,6 +120,11 @@ function playback(index) {
 
 // Display the last title/description first
 title.textContent = locations[locations.length - 1].title;
+    
+map.on('load', function() { 
+// Start the playback animation for each borough
+playback(0);
+});
 
 </script>
 
